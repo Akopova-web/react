@@ -1,0 +1,17 @@
+.nav {
+  grid-area: n;
+  background-color: #f5933d;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.items {
+  color: white;
+  text-decoration: none;
+}
+
+.activeLink{
+  color: #eeec66;
+}
