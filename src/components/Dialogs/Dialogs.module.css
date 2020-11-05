@@ -4,18 +4,23 @@
 }
 
 .dialog {
+    display: flex;
+    align-items: center;
     padding: 10px;
 }
 
 .dialog a {
     text-decoration: none;
     color: white;
+    padding: 20px;
 }
 
 .messages {
     padding: 10px;
 }
 
-.message {
-
+.dialogsItems img {
+    width: 80px;
+    height: 80px;
+    border-radius: 100px;
 }
