@@ -8,9 +8,10 @@ import Message from "./Message/Message";
 
 
 const Dialogs = (props) => {
-    let dialogsElements = props.dialogs.map(dialog => <DialogItem name={dialog.name} id={dialog.id} />);
-    let messagesElements = props.messages.map(message => <Message message={message.message} />);
-    let newMessageBody = props.newMessageBody;
+    debugger;
+    let dialogsElements = props.dialogPage.dialogs.map(dialog => <DialogItem name={dialog.name} id={dialog.id} />);
+    let messagesElements = props.dialogPage.messages.map(message => <Message message={message.message} />);
+    let newMessageBody = props.dialogPage.newMessageBody;
 
     let newMessage = React.createRef();
 
@@ -22,7 +23,6 @@ const Dialogs = (props) => {
         let body = event.target.value;
         props.updateNewMessage(body);
     }
-
     return (
         <div className={classes.dialogs}>
 
