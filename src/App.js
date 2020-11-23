@@ -2,6 +2,7 @@ import React from 'react';
 import { Route } from 'react-router-dom';
 import './App.css';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
+import FriendsContainer from './components/Friends/FriendsContainer';
 import Header from './components/Header/Header';
 import Navbar from './components/Navbar/Navbar';
 import Profile from './components/Profile/Profile';
@@ -17,8 +18,17 @@ const App=(props) => {
           <Route exact path="/profile" 
           render={() => <Profile />} />
 
+          <Route exact path="/diary" 
+          render={() => <div>diary</div> } />
+
+          <Route exact path="/timetable" 
+          render={() => <div>timetable</div> } />
+
           <Route exact path="/dialogs" 
           render={() => <DialogsContainer />} />
+
+          <Route exact path="/friends" 
+          render={() => <FriendsContainer /> } />
 
         </div>
       </div>
