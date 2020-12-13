@@ -1,4 +1,13 @@
 .usersPhoto {
-    width: 100px;
+    width: 140px;
     border-radius: 150px;
+    padding-bottom: 20px;
+}
+
+.selectedPage {
+    font-weight: bold;
+}
+
+.info, .followingButtons {
+    padding-left: 20px;
 }

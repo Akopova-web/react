@@ -1,6 +1,10 @@
 .descriptionBlock {
     padding: 20px;
 }
+.descriptionBlock img {
+    width: 150px;
+    border-radius: 100px;
+}
 .image {
     display: flex;
 }

@@ -1,6 +1,6 @@
 .nav {
   grid-area: n;
-  background-color: #f5933d;
+  background-color: #ff7f50;
 }
 
 ul {
@@ -9,9 +9,16 @@ ul {
 
 .items {
   color: white;
-  text-decoration: none;
 }
 
+.items a {
+  text-decoration: none;
+}
+.items:hover {
+  text-decoration: none;
+  color: #f4272c;
+
+}
 .activeLink{
-  color: #eeec66;
+  color: #89092f;
 }

@@ -3,20 +3,24 @@ import { Route } from 'react-router-dom';
 import './App.css';
 import DialogsContainer from './components/Dialogs/DialogsContainer';
 import FriendsContainer from './components/Friends/FriendsContainer';
-import Header from './components/Header/Header';
+import HeaderContainer from './components/Header/HeaderContainer';
+import LoginPage from './components/Login/Login';
 import Navbar from './components/Navbar/Navbar';
-import Profile from './components/Profile/Profile';
+import ProfileContainer from './components/Profile/ProfileContainer';
 
 const App=(props) => {
   return (
     
       <div className="app-wrapper"> 
-        <Header />
+        <HeaderContainer />
         <Navbar />
         <div className="app-wrapper__content">
 
-          <Route exact path="/profile" 
-          render={() => <Profile />} />
+          <Route exact path="/profile/:userId?" 
+          render={() => <ProfileContainer />} />
+
+          <Route exact path="/login" 
+          render={() => <LoginPage />} />
 
           <Route exact path="/diary" 
           render={() => <div>diary</div> } />
