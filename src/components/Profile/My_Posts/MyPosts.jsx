@@ -1,41 +1,44 @@
 import React from "react";
+import { Field, reduxForm } from "redux-form";
+import { Textarea } from "../../../common/FormsControls/FormsControls";
+import { maxLength, required } from "../../../utils/validators/validators";
 import classes from "./MyPosts.module.css";
 import Post from "./Post/Post";
 
-const MyPosts = (props) => {
+const maxLength15 = maxLength(15);
 
-  let PostElements =
-    props.posts.map(post => <Post message={post.message} likesCount={post.likesCount} />);
-
-  let newPostsElement = React.createRef();
-
-  let addPost = () => {
-    props.addPost();
-  }
-
-  let onPostChange = () => {
-    let text = newPostsElement.current.value;
-    props.updateNewPostText(text);
-  }
-
-  return ( 
-    <div className={classes.post}>
-
-      <h3>My Posts</h3>
-
-      <div className="form-group">
-        <textarea onChange={onPostChange} ref={newPostsElement} value={props.newPostText} />
+const MyPostForm = (props) => {
+  return (
+    <form onSubmit={props.handleSubmit}>
+      <div>
+        <Field placeholder={"New post"} name={"post"} component={Textarea} validate={[required, maxLength15]}></Field>
       </div>
       <div>
-        <button type="button" className="btn btn-light" onClick={addPost}>Add post</button>
+        <button>Add post</button>
       </div>
+    </form>
+  )
+}
+const MyPostReduxForm = reduxForm({ form: 'post' })(MyPostForm)
 
-      <div className={classes.item}>
-        {PostElements}
+const MyPosts = React.memo((props) => {
+  const PostElements =
+    props.posts.map(post => <Post message={post.message} likesCount={post.likesCount} />);
+
+  const addNewPost = (values) => {
+    props.addPost(values.post)
+  }
+
+    return (
+      <div className={classes.post}>
+        <h3>My Posts</h3>
+        <MyPostReduxForm onSubmit={addNewPost} />
+        <div className={classes.item}>
+          {PostElements}
+        </div>
+
       </div>
-
-    </div>
-  );
-};
+    );
+})
 
 export default MyPosts;

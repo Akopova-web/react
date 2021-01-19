@@ -15,7 +15,7 @@ let initialState = {
     users: [],
     pageSize: 5,
     totalUsersCount: 0,
-    currentPage: 1,
+    page: 1,
     isFetching: true,
     isFollowingInProgress: []
 }
@@ -56,7 +56,7 @@ const usersReducer = (state = initialState, action) => {
                     case SET_CURRENT_PAGE:
                         return {
                             ...state,
-                            currentPage: action.currentPage
+                            page: action.page
                         }
                         case SET_TOTAL_COUNT:
                             return {
@@ -72,7 +72,7 @@ const usersReducer = (state = initialState, action) => {
                                     return {
                                         ...state,
                                         isFollowingInProgress: action.isFollowingInProgress ? [...state.isFollowingInProgress, action.userId] :
-                                            state.isFollowingInProgress.filter(id => id != action.userId)
+                                            state.isFollowingInProgress.filter(id => id !== action.userId)
                                     }
                                     default:
                                         return state;
@@ -94,9 +94,9 @@ export const setUsers = (users) => ({
     users
 })
 
-export const setCurrentPage = (currentPage) => ({
+export const setCurrentPage = (page) => ({
     type: SET_CURRENT_PAGE,
-    currentPage
+    page
 })
 
 export const setTotalUsersCount = (totalCount) => ({
@@ -113,12 +113,14 @@ export const toggleIsFollowingProgress = (isFollowingInProgress, userId) => ({
     userId
 })
 
-export const getUsers = (currentPage, pageSize) => {
+export const getUsers = (page, pageSize) => {
 
     return (dispatch) => {
 
         dispatch(toggleIsFetching(true));
-        usersAPI.getUsers(currentPage, pageSize).then(data => {
+        dispatch(setCurrentPage(page));
+
+        usersAPI.getUsers(page, pageSize).then(data => {
             dispatch(toggleIsFetching(false));
             dispatch(setUsers(data.items));
             dispatch(setTotalUsersCount(data.totalCount));

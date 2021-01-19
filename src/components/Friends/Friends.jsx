@@ -22,16 +22,16 @@ let Friends = (props) => {
                     <div className={classes.followingButtons}>
                         <div>
                             <NavLink to={'/profile/' + u.id}>
-                                <img className={classes.usersPhoto} src={u.photos.large != null ? u.photos.large : userPhoto} />
+                                <img alt="" className={classes.usersPhoto} src={u.photos.large != null ? u.photos.large : userPhoto} />
                             </NavLink>
                         </div>
                         <div>
                             {u.followed
-                                ? <button type="button" className="btn btn-light" disabled={props.isFollowingInProgress.some(id => id === u.id)} onClick={() => {
+                                ? <button disabled={props.isFollowingInProgress.some(id => id === u.id)} onClick={() => {
                                     props.unfollow(u.id)
                                 }}>Unfollow</button>
 
-                                : <button type="button" className="btn btn-light" disabled={props.isFollowingInProgress.some(id => id === u.id)} onClick={() => {
+                                : <button disabled={props.isFollowingInProgress.some(id => id === u.id)} onClick={() => {
                                     props.follow(u.id)
                                 }}>Follow</button>
                             }
@@ -44,8 +44,8 @@ let Friends = (props) => {
                             <div>{u.status}</div>
                         </span>
                         <span>
-                            <div>{'u.location.country'}</div>
-                            <div>{'u.location.city'}</div>
+                            <div>{u.id}</div>
+                            <div>{u.uniqueUrlName}</div>
                         </span>
                     </div>
                 </div>

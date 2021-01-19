@@ -1,0 +1,12 @@
+.formControl .error input,
+.formControl .error textarea {
+    border: solid 2px red;
+    }
+
+.formControl span {
+    color: rgb(97, 9, 9);
+}
+
+.formControl, .formControl div{
+    display: inline;
+}

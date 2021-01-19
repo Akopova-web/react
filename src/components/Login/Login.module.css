@@ -1,0 +1,13 @@
+.rememberMe {
+    display: inline;
+}
+
+.Login {
+    padding: 10px;
+}
+
+.formError{
+    display: block;
+    color: rgb(131, 4, 4);
+    padding: 5px;
+}

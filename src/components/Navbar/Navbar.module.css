@@ -9,11 +9,9 @@ ul {
 
 .items {
   color: white;
-}
-
-.items a {
   text-decoration: none;
 }
+
 .items:hover {
   text-decoration: none;
   color: #f4272c;
