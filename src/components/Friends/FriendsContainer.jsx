@@ -43,17 +43,6 @@ let mapStateToProps = (state) => {
         isFollowingInProgress: getIsFollowingInProgress(state)
     }
 }
-// let mapStateToProps = (state) => {
-//     return {
-//         users: state.friendsPage.users,
-//         pageSize: state.friendsPage.pageSize,
-//         totalUsersCount: state.friendsPage.totalUsersCount,
-//         currentPage: state.friendsPage.currentPage,
-//         isFetching: state.friendsPage.isFetching,
-//         isFollowingInProgress: state.friendsPage.isFollowingInProgress
-//     }
-// }
-
 export default compose(
     connect(mapStateToProps, {
         follow, unfollow, toggleIsFollowingProgress, getUsers

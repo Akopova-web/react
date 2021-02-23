@@ -1,6 +1,6 @@
 import React from "react";
-import { connect } from "react-redux";
-import { Route, withRouter } from "react-router-dom";
+import { connect, Provider } from "react-redux";
+import { BrowserRouter, Route, withRouter } from "react-router-dom";
 import { compose } from "redux";
 import "./App.css";
 import Preloader from "./common/Preloader";
@@ -10,7 +10,9 @@ import HeaderContainer from "./components/Header/HeaderContainer";
 import LoginPage from "./components/Login/Login";
 import Navbar from "./components/Navbar/Navbar";
 import ProfileContainer from "./components/Profile/ProfileContainer";
+import { Timetable } from "./components/Timetable/Timetable";
 import { initializeApp } from "./redux/app-reducer";
+import store from "./redux/redux-store";
 
 class App extends React.Component {
   componentDidMount() {
@@ -35,7 +37,7 @@ class App extends React.Component {
 
           <Route exact path="/diary" render={() => <div>diary</div>} />
 
-          <Route exact path="/timetable" render={() => <div>timetable</div>} />
+          <Route exact path="/timetable" render={() => <Timetable />} />
 
           <Route exact path="/dialogs" render={() => <DialogsContainer />} />
 
@@ -50,7 +52,18 @@ const mapStateToProps = (state) => ({
   initialized: state.app.initialized,
 });
 
-export default compose(
+let AppContainer = compose(
   connect(mapStateToProps, { initializeApp }),
   withRouter
 )(App);
+
+let MainApp = (props) => {
+  return (
+    <BrowserRouter>
+      <Provider store={store}>
+        <AppContainer />
+      </Provider>
+    </BrowserRouter>
+  );
+};
+export default MainApp;

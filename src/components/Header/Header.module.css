@@ -1,15 +1,19 @@
 .header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   grid-area: h;
   background-color: #ff7f50;
+  border-radius: 20px;
 }
 .header img {
   padding-left: 30px;
   height: 100%;
 }
 .loginBlock {
-  color: white;
+  color: black;
   float: right;
-  padding: 20px;
+  padding-right: 20px;
 }
 .loginBlock a {
   color: white;

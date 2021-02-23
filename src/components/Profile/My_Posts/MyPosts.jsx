@@ -7,26 +7,26 @@ import Post from "./Post/Post";
 
 const maxLength15 = maxLength(15);
 
-const MyPostForm = (props) => {
+const MyPostForm = (handleSubmit) => {
   return (
-    <form onSubmit={props.handleSubmit}>
+    <form onSubmit={handleSubmit}>
       <div>
         <Field placeholder={"New post"} name={"post"} component={Textarea} validate={[required, maxLength15]}></Field>
       </div>
       <div>
-        <button>Add post</button>
+        <button type="button">Add post</button>
       </div>
     </form>
   )
 }
 const MyPostReduxForm = reduxForm({ form: 'post' })(MyPostForm)
 
-const MyPosts = React.memo((props) => {
+const MyPosts = React.memo(({posts, addPost}) => {
   const PostElements =
-    props.posts.map(post => <Post message={post.message} likesCount={post.likesCount} />);
+    posts.map(post => <Post message={post.message} likesCount={post.likesCount} />);
 
   const addNewPost = (values) => {
-    props.addPost(values.post)
+    addPost(values.post)
   }
 
     return (

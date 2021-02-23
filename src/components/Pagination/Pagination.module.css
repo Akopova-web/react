@@ -1,0 +1,15 @@
+.pagination {
+margin: 25px;
+display: flex;
+cursor: pointer;
+}
+.pageNumber.selectedPage {
+    font-weight: bold;
+}
+.pageNumber {
+    padding: 3px;
+    margin: 1px;
+    background-color: white;
+    border: 1px solid #89092f;
+    border-radius: 10px;
+}
