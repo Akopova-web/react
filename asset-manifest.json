@@ -1,0 +1,29 @@
+{
+  "files": {
+    "main.css": "/demo-network-for-students/static/css/main.06095c8f.chunk.css",
+    "main.js": "/demo-network-for-students/static/js/main.d01a2446.chunk.js",
+    "main.js.map": "/demo-network-for-students/static/js/main.d01a2446.chunk.js.map",
+    "runtime-main.js": "/demo-network-for-students/static/js/runtime-main.e4681f09.js",
+    "runtime-main.js.map": "/demo-network-for-students/static/js/runtime-main.e4681f09.js.map",
+    "static/css/2.61833881.chunk.css": "/demo-network-for-students/static/css/2.61833881.chunk.css",
+    "static/js/2.c9b10fe2.chunk.js": "/demo-network-for-students/static/js/2.c9b10fe2.chunk.js",
+    "static/js/2.c9b10fe2.chunk.js.map": "/demo-network-for-students/static/js/2.c9b10fe2.chunk.js.map",
+    "index.html": "/demo-network-for-students/index.html",
+    "precache-manifest.ab22623ae11cd7b755eaac1a92830a89.js": "/demo-network-for-students/precache-manifest.ab22623ae11cd7b755eaac1a92830a89.js",
+    "service-worker.js": "/demo-network-for-students/service-worker.js",
+    "static/css/2.61833881.chunk.css.map": "/demo-network-for-students/static/css/2.61833881.chunk.css.map",
+    "static/css/main.06095c8f.chunk.css.map": "/demo-network-for-students/static/css/main.06095c8f.chunk.css.map",
+    "static/js/2.c9b10fe2.chunk.js.LICENSE.txt": "/demo-network-for-students/static/js/2.c9b10fe2.chunk.js.LICENSE.txt",
+    "static/media/empty_avatar.png": "/demo-network-for-students/static/media/empty_avatar.c7b5f6a0.png",
+    "static/media/loading.svg": "/demo-network-for-students/static/media/loading.e8c852d1.svg",
+    "static/media/logo2.png": "/demo-network-for-students/static/media/logo2.fa112755.png",
+    "static/media/ProfileInfo.module.css": "/demo-network-for-students/static/media/Шапка.458f97fe.png"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e4681f09.js",
+    "static/css/2.61833881.chunk.css",
+    "static/js/2.c9b10fe2.chunk.js",
+    "static/css/main.06095c8f.chunk.css",
+    "static/js/main.d01a2446.chunk.js"
+  ]
+}
