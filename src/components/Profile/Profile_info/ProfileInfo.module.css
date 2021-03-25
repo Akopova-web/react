@@ -1,14 +1,9 @@
 .descriptionBlock {
+    background-image: url(./../../../assets/Images/Шапка.png);
     padding: 20px;
+    border-radius: 18px;
 }
 .descriptionBlock img {
     width: 150px;
     border-radius: 100px;
-}
-.image {
-    display: flex;
-}
-.image img {
-    flex-basis: 100%;
-    height: auto;
 }

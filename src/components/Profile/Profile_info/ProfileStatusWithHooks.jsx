@@ -28,6 +28,4 @@ const ProfileStatusWithHooks = ({status, updateUserStatus}) => {
         </div>
     );
 }
-
-
 export default ProfileStatusWithHooks;

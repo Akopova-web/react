@@ -40,6 +40,11 @@ export const profileAPI = {
   updateStatus(status) {
     return instance.put(`profile/status`, { status: status });
   },
+  changeUserPhoto(image) {
+    const formData = new FormData();
+    formData.append("image", image)
+    return instance.put(`profile/photos`, formData);
+  }
 };
 
 export const authAPI = {
